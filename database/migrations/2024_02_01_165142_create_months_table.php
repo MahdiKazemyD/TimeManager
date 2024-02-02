@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('years_id');
             $table->integer('number')->unique()->comment('number in year');
-            $table->string('slogan');
-            $table->text('description');
             $table->timestamps();
         });
     }

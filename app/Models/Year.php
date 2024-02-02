@@ -16,6 +16,11 @@ class Year extends Model
         return $this->hasMany(Month::class);
     }
 
+    public function slogan()
+    {
+        return $this->morphOne(Slogan::class, 'sloganable');
+    }
+
     public function targets()
     {
         return $this->morphMany(Target::class , 'targetable');

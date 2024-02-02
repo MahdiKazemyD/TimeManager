@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('years', function (Blueprint $table) {
+        Schema::create('slogans', function (Blueprint $table) {
             $table->id();
-            $table->string('number');
+            $table->string('text');
             $table->text('description');
+            $table->morphs('sloganable');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('years');
+        Schema::dropIfExists('slogans');
     }
 };
