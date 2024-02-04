@@ -15,6 +15,11 @@ class BaseRepository implements BaseRepositoryInterface
         return $this->model->all();
     }
 
+    public function allForUser()
+    {
+        return $this->model->where('id', session('id'));
+    }
+
     public function allWithPaginate($paginate)
     {
         return $this->model->paginate($paginate);
@@ -45,4 +50,5 @@ class BaseRepository implements BaseRepositoryInterface
     {
         return $this->model->where($index, 'LIKE' , $value)->paginate($paginate);
     }
+
 }

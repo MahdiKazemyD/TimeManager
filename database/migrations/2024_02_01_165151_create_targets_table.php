@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('targets', function (Blueprint $table) {
             $table->id();
+            $table->morphs('targetable');
             $table->foreignId('parent_id')->nullable();
             $table->foreignId('category_id');
             $table->string('title');
             $table->text('description');
             $table->boolean('status');
-            $table->morphs('targetable');
+            $table->timestamp('endDate');
             $table->timestamps();
         });
     }

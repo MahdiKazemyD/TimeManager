@@ -25,4 +25,9 @@ class Day extends Model
     {
         return $this->hasMany(Report::class);
     }
+
+    public function gift()
+    {
+        return $this->morphOne(Gift::class, 'giftable');
+    }
 }

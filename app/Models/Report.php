@@ -11,7 +11,7 @@ class Report extends Model
 
     protected $guarded = ['id'];
 
-    public function day()
+    public function day(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Day::class);
     }

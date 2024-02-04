@@ -25,4 +25,9 @@ class Task extends Model
     {
         return $this->hasMany(Report::class);
     }
+
+    public function target()
+    {
+        return $this->belongsTo(Target::class);
+    }
 }

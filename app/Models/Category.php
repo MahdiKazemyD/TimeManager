@@ -11,8 +11,13 @@ class Category extends Model
 
     protected $guarded = ['id'];
 
-    public function parent()
+    public function parent(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasOne(Category::class , 'parent_id');
+        return $this->belongsTo(Category::class , 'parent_id');
+    }
+
+    public function targets(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Target::class);
     }
 }

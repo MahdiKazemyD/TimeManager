@@ -5,7 +5,7 @@ namespace App\Http\Repositories;
 interface BaseRepositoryInterface
 {
     public function all();
-
+    public function allForUser();
     public function allWithPaginate($paginate);
     public function create(array $attribute);
     public function update(int $id, array $attribute);

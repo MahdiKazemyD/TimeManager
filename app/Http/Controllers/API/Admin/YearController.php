@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class YearController extends Controller
 {
-    //
+    public function __construct()
+    {
+    }
 }

@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('gifts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('day_id');
-            $table->foreignId('target_id');
+            $table->morphs('giftable');
             $table->string('title');
-            $table->integer('timeMoment');
-            $table->text('description');
-            $table->enum('priority', ['A','B','C','D']);
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
@@ -30,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tasks');
+        Schema::dropIfExists('gifts');
     }
 };

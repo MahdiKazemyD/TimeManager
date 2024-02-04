@@ -26,4 +26,9 @@ class Month extends Model
         return $this->morphMany(Target::class, 'targetable');
     }
 
+    public function gift()
+    {
+        return $this->morphOne(Gift::class, 'giftable');
+    }
+
 }
