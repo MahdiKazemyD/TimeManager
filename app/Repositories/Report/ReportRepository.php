@@ -2,8 +2,8 @@
 
 namespace App\Repositories\Report;
 
-use App\Http\Repositories\BaseRepository;
-use App\Http\Repositories\BaseRepositoryInterface;
+use App\Repositories\BaseRepository;
+use App\Repositories\BaseRepositoryInterface;
 
 class ReportRepository extends BaseRepository implements BaseRepositoryInterface
 {

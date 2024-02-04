@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Day;
 
-use App\Http\Repositories\BaseRepository;
+use App\Repositories\BaseRepository;
 
 class DayRepository extends BaseRepository implements DayRepositoryInterface
 {

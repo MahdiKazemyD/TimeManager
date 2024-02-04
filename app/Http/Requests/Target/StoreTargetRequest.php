@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Target;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateGiftRequest extends FormRequest
+class StoreTargetRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**

@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Month;
 
-use App\Http\Repositories\BaseRepositoryInterface;
+use App\Repositories\BaseRepositoryInterface;
 
 interface MonthRepositoryInterface extends BaseRepositoryInterface
 {

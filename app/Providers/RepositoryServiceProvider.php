@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\Auth\AuthRepository;
+use App\Repositories\Auth\AuthRepositoryInterface;
 use App\Repositories\Category\CategoryRepository;
 use App\Repositories\Category\CategoryRepositoryInterface;
 use App\Repositories\Day\DayRepository;
@@ -29,6 +31,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(CategoryRepositoryInterface::class, CategoryRepository::class);
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
+        $this->app->bind(AuthRepositoryInterface::class, AuthRepository::class);
         $this->app->bind(YearRepositoryInterface::class, YearRepository::class);
         $this->app->bind(MonthRepositoryInterface::class, MonthRepository::class);
         $this->app->bind(DayRepositoryInterface::class, DayRepository::class);

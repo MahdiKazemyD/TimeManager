@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Repositories;
+namespace App\Repositories;
 
+use App\Repositories\BaseRepositoryInterface;
 use App\Models\User;
 
 class BaseRepository implements BaseRepositoryInterface

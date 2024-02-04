@@ -1,7 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API\Auth;
 
+use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\RegisterRequest;
+use App\Repositories\Auth\AuthRepositoryInterface;
+use App\Repositories\User\UserRepositoryInterface;
+use App\Service\AuthService;
+use App\Service\UserService;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
@@ -12,9 +18,17 @@ class AuthController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        readonly protected AuthRepositoryInterface $authRepository,
+        readonly protected AuthService $authService
+    )
     {
-        $this->middleware('auth:api', ['except' => ['login']]);
+//        $this->middleware('auth:api', ['except' => ['login']]);
+    }
+
+    public function register(RegisterRequest $request)
+    {
+         return $this->authService->register($request);
     }
 
     /**
@@ -22,11 +36,10 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function login()
+    public function login(LoginRequest $request)
     {
-        $credentials = request(['email', 'password']);
 
-        if (! $token = auth()->attempt($credentials)) {
+        if (! $token = auth()->attempt($request->toArray())) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 

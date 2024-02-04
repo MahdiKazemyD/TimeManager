@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Task;
 
-use App\Http\Repositories\BaseRepository;
+use App\Repositories\BaseRepository;
 
 class TaskRepository extends BaseRepository implements TaskRepositoryInterface
 {

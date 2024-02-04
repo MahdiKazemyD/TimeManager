@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Target;
 
-use App\Http\Repositories\BaseRepositoryInterface;
+use App\Repositories\BaseRepositoryInterface;
 
 interface TargetRepositoryInterface extends BaseRepositoryInterface
 {
