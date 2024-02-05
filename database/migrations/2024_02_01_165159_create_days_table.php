@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('days', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('months_id');
+            $table->foreignId('month_id');
+            $table->integer('number');
             $table->enum('weekDay', ['saturday', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday']);
-            $table->timestamp('dayInMonth');
+            $table->unique(['month_id', 'number']);
             $table->timestamps();
         });
     }

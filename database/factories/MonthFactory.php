@@ -17,7 +17,8 @@ class MonthFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'years_id' => $this->faker->randomElement([1,2,3,4,5]),
+            'number' => $this->faker->randomElement([1,2,3,4,5,6,7,8,9,10,11,12]),
         ];
     }
 }

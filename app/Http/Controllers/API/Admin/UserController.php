@@ -15,7 +15,17 @@ class UserController extends Controller
 
     public function index()
     {
-        return $this->userRepository->allWithPaginate(100);
+        return $this->userRepository->allWithChildren();
+    }
+
+    public function block(int $id)
+    {
+        return $this->userRepository->userBlock($id);
+    }
+
+    public function destroy(int $id)
+    {
+        return $this->userRepository->delete($id);
     }
 
 }

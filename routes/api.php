@@ -25,22 +25,23 @@ use App\Http\Controllers\API\Admin\UserController as AdminUser;
 |
 */
 
-Route::get('/' , function (){
-    return 1;
-});
 Route::prefix('auth')->group(function (){
     Route::post('register', [AuthController::class , 'register']);
     Route::post('login', [AuthController::class , 'login']);
 });
 
 Route::prefix('admin')->group(function (){
-    Route::apiResource('users', AdminUser::class);
+    Route::prefix('users')->controller(AdminUser::class)->group(function (){
+        Route::get('/', 'index');
+        Route::get('block/{id}', 'block');
+        Route::delete('destroy/{id}', 'destroy');
+    });
     Route::apiResource('years', AdminYear::class);
-    Route::apiResource('months', AdminMonth::class);
-    Route::apiResource('days', AdminDay::class);
+    Route::get('month/created', [AdminMonth::class, 'createMonths']);
+    Route::get('day/created', [AdminDay::class, 'createDays']);
 });
 
-Route::middleware('auth:api')->group(function (){
+//Route::middleware('auth:api')->group(function (){
     Route::apiResource('categories', CategoryController::class);
     Route::apiResource('targets', TargetController::class);
     Route::apiResource('tasks', TaskController::class);
@@ -49,8 +50,8 @@ Route::middleware('auth:api')->group(function (){
     Route::apiResource('slogan', SloganController::class);
     Route::apiResource('user', UserController::class);
 
-//    Route::post('logout', 'AuthController@logout');
-//    Route::post('refresh', 'AuthController@refresh');
-//    Route::post('me', 'AuthController@me');
-});
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('refresh', [AuthController::class, 'refresh']);
+    Route::post('me', [AuthController::class, 'me']);
+//});
 

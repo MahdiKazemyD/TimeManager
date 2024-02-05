@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('months', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('years_id');
-            $table->integer('number')->unique()->comment('number in year');
+            $table->foreignId('year_id');
+            $table->integer('number');
+            $table->unique(['year_id', 'number']);
             $table->timestamps();
         });
     }

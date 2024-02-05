@@ -2,7 +2,9 @@
 
 namespace App\Repositories\Year;
 
-interface YearRepositoryInterface
-{
+use App\Repositories\BaseRepositoryInterface;
 
+interface YearRepositoryInterface extends BaseRepositoryInterface
+{
+    public function allMonthByDay();
 }

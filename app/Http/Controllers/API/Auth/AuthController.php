@@ -38,7 +38,6 @@ class AuthController extends Controller
      */
     public function login(LoginRequest $request)
     {
-
         if (! $token = auth()->attempt($request->toArray())) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }

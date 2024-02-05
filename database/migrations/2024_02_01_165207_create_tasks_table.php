@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('day_id');
-            $table->foreignId('target_id');
+            $table->foreignId('target_id')->nullable();
+            $table->foreignId('category_id')->nullable()->comment('for any task not target');
             $table->string('title');
             $table->integer('timeMoment');
             $table->text('description');

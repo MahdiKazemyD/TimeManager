@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('targets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->morphs('targetable');
             $table->foreignId('parent_id')->nullable();
-            $table->foreignId('category_id');
+            $table->foreignId('category_id')->nullable();
             $table->string('title');
             $table->text('description');
             $table->boolean('status');

@@ -2,9 +2,10 @@
 
 namespace App\Repositories\Slogan;
 
-use Psr\Http\Message\ServerRequestInterface;
+use App\Repositories\BaseRepository;
+use App\Repositories\BaseRepositoryInterface;
 
-interface SloganRepositoryInterface extends ServerRequestInterface
+interface SloganRepositoryInterface extends BaseRepositoryInterface
 {
 
 }
