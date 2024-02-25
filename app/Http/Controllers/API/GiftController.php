@@ -9,58 +9,22 @@ use App\Models\Gift;
 
 class GiftController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreGiftRequest $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Gift $gift)
+    public function update(int $id, UpdateGiftRequest $request)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Gift $gift)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateGiftRequest $request, Gift $gift)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Gift $gift)
+    public function destroy(int $id)
     {
         //
     }
