@@ -11,4 +11,9 @@ class GiftRepository extends BaseRepository implements GiftRepositoryInterface
     {
         parent::__construct($model);
     }
+
+    public function getGiftStatusAvailable()
+    {
+        return $this->model->where('user_id' , auth()->id())->where('status' , 'available')->get();
+    }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->morphs('giftable');
             $table->string('title');
-            $table->boolean('status')->default(0);
+            $table->enum('status', ['waiting', 'available', 'received']);
             $table->timestamps();
         });
     }
