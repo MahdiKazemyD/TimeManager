@@ -8,6 +8,8 @@ use App\Repositories\Category\CategoryRepository;
 use App\Repositories\Category\CategoryRepositoryInterface;
 use App\Repositories\Day\DayRepository;
 use App\Repositories\Day\DayRepositoryInterface;
+use App\Repositories\Gift\GiftRepository;
+use App\Repositories\Gift\GiftRepositoryInterface;
 use App\Repositories\Month\MonthRepository;
 use App\Repositories\Month\MonthRepositoryInterface;
 use App\Repositories\Report\ReportRepository;
@@ -38,6 +40,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(TargetRepositoryInterface::class, TargetRepository::class);
         $this->app->bind(TaskRepositoryInterface::class, TaskRepository::class);
         $this->app->bind(ReportRepositoryInterface::class, ReportRepository::class);
+        $this->app->bind(GiftRepositoryInterface::class, GiftRepository::class);
     }
 
     /**

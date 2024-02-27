@@ -46,7 +46,8 @@ Route::prefix('admin')->group(function (){
     Route::apiResource('targets', TargetController::class);
     Route::apiResource('tasks', TaskController::class);
     Route::apiResource('report', ReportController::class);
-    Route::apiResource('gifts', GiftController::class);
+    Route::apiResource('gifts', GiftController::class)->except('index', 'show');
+    Route::get('getGift', [GiftController::class , 'getGiftStatusAvailable']);
     Route::apiResource('slogan', SloganController::class);
     Route::apiResource('user', UserController::class);
 
