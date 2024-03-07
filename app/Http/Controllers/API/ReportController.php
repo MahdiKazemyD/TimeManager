@@ -24,16 +24,16 @@ class ReportController extends Controller
 
     public function store(StoreReportRequest $request)
     {
-        //
+        return $this->service->store($request);
     }
 
     public function update(int $id, UpdateReportRequest $request)
     {
-        //
+        return $this->service->update($id, $request);
     }
 
     public function destroy(int $id)
     {
-
+        return $this->repository->delete($id);
     }
 }
